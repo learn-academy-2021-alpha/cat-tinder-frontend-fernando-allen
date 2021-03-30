@@ -15,28 +15,28 @@ Enzyme.configure({ adapter: new Adapter() })
 
 describe('When Header loads', () => {
 
-  it('displays an open navbar without the hamburger', () => {
-    const header = shallow(<Header/>);
+  it('displays a navbar', () => {
+    const renderedHeader = shallow(<Header/>);
 
-    const navigationBar = header.find('Navbar');
+    const navigationBar = renderedHeader.find('Navbar');
 
     expect(navigationBar.length).toEqual(1);
 
-    const collapsedComponent = header.find('Collapse');
+    // const collapsedComponent = renderedHeader.find('Collapse');
     // console.log(collapsedComponent.debug())
-    expect(collapsedComponent.props().isOpen).toEqual(false);
+    // expect(collapsedComponent.props().isOpen).toEqual(false);
   })
 
   it('displays dropdown when Options is clicked', () => {
     // arrange
-    const header = shallow(<Header/>);
+    const renderedHeader = shallow(<Header/>);
 
     // act
-    const options = header.find('DropdownToggle');
+    const options = renderedHeader.find('DropdownToggle');
     options.simulate('click');
 
     // assert
-    const dropdownComponent = header.find('DropdownItem');
+    const dropdownComponent = renderedHeader.find('DropdownItem');
     expect(dropdownComponent.length).toEqual(4);
   })
 })

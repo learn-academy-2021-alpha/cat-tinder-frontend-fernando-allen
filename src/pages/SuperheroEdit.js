@@ -4,7 +4,7 @@ class SuperheroEdit extends Component {
   render() {
     return (
       <>
-        Edit
+        <p>Edit</p>
       </>
     )
   }

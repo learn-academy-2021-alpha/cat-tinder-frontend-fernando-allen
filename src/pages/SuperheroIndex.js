@@ -4,7 +4,7 @@ class SuperheroIndex extends Component {
   render() {
     return (
       <>
-        Index
+        <p>Index</p>
       </>
     )
   }
