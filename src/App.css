@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.jumbotron {
+  background-image: url("https://vamers-com.exactdn.com/wp-content/uploads/2013/09/Vamers-Atristry-Marvel-and-DC-Superheroes-Walk-Their-Children-to-School-Banner.jpg") !important;
+  background-size: cover;
+  background-position: top;
+  height: 400px;
+  color: white;
+}
+
+.footer {
+  text-align: center;
+}
