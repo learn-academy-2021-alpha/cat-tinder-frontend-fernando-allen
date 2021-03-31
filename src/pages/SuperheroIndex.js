@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, CardTitle, Col, CardImg, } from 'reactstrap'
+import { Card, CardTitle, Col, CardImg, CardColumns } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
 class SuperheroIndex extends Component {
@@ -7,7 +7,7 @@ class SuperheroIndex extends Component {
     return (
       <>
          <h2>Supers Looking for Love!</h2>
-         <Col sm="6">
+         <CardColumns>
         { this.props.superheroes.map((superhero, index) => {
         return (
         <Card body key={ index }>
@@ -25,7 +25,7 @@ class SuperheroIndex extends Component {
           </Card>
           )
         })}
-        </Col>
+        </CardColumns>
       </>
     )
   }

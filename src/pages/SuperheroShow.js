@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { NavLink } from "react-router-dom"
+import { Button } from "reactstrap"
 
 class SuperheroShow extends Component {
   render() {
@@ -14,6 +16,13 @@ class SuperheroShow extends Component {
         <div>Power: {superhero.power}</div>
         <div>Hobbies: {superhero.hobbies}</div>
         <div>Birthplace: {superhero.birthplace}</div>
+        <NavLink
+          to={`/superheroedit/${this.props.superhero.id}`}
+        >
+        <Button color="secondary">
+          Edit Super Profile
+        </Button>
+        </NavLink>
         </div>
        
       </>
