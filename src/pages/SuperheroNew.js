@@ -4,7 +4,7 @@ class SuperheroNew extends Component {
   render() {
     return (
       <>
-        New
+        <p>New</p>
       </>
     )
   }
