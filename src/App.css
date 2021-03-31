@@ -1,5 +1,6 @@
 body {
   background-color: darkgray !important;
+  font-family: 'Covered By Your Grace', cursive !important;
 }
 
 .jumbotron {
@@ -12,7 +13,11 @@ body {
   text-shadow: 2px 2px 5px #ff0000;
   font-family: 'Covered By Your Grace', cursive;
 }
+.center {
+  text-align: center;
+}
 
 .footer {
   text-align: center;
 }
+
