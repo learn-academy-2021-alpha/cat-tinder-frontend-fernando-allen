@@ -24,6 +24,16 @@ class App extends Component {
       superheroes: mockSuperheroes
     }
   }
+  createNewSuperhero = (newSuperhero) => {
+    console.log(newSuperhero)
+  }
+
+  updateSuperhero = (superhero, id) => {
+    console.log("superhero:", superhero)
+    console.log("superhero:", id)
+  }
+
+
 
   render() {
     return (
@@ -40,11 +50,20 @@ class App extends Component {
             const foundSuper = this.state.superheroes.find(superhero => superhero.id === id);
             return <SuperheroShow superhero={foundSuper}/>}
           } />
-          <Route path="/superheroindex" component = { SuperheroIndex } />
-          <Route path="/superheroshow" component = { SuperheroShow } />
-          <Route path="/superheronew" component = { SuperheroNew } />
-          <Route path="/superheroedit" component = { SuperheroEdit } />
-          <Route component = { NotFound } />
+          <Route path="/superheronew" render={(props) => {
+            return <SuperheroNew createNewSuperhero={ this.createNewSuperhero } />
+          }}
+          />
+   <Route exact path={"/superheroedit/:id"} render={ (props) => {
+    let id = props.match.params.id
+    let superhero = this.state.superheroes.find(superhero => superhero.id === parseInt(id))
+    return(
+      <SuperheroEdit
+        updateSuperhero={ this.updateSuperhero }
+        superhero={ superhero }
+      />)}
+    }/>
+        <Route component = { NotFound } />
         </Switch>
         <Footer />
       </Router>
