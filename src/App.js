@@ -31,6 +31,15 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={ Home } />
+          <Route 
+            path="/superheroindex" 
+            render = { () => <SuperheroIndex superheroes={this.state.superheroes}/> } 
+          />
+          <Route path="/Superheroshow/:id" render = {(props) => {
+            const id = +props.match.params.id;
+            const foundSuper = this.state.superheroes.find(superhero => superhero.id === id);
+            return <SuperheroShow superhero={foundSuper}/>}
+          } />
           <Route path="/superheroindex" component = { SuperheroIndex } />
           <Route path="/superheroshow" component = { SuperheroShow } />
           <Route path="/superheronew" component = { SuperheroNew } />
