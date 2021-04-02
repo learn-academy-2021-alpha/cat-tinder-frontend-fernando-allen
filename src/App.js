@@ -21,9 +21,27 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      superheroes: mockSuperheroes
+      superheroes: []
     }
   }
+
+  componentDidMount(){
+    this.superheroIndex()
+  }
+
+  superheroIndex = () => {
+    fetch("http://localhost:3000/supers")
+    .then(response => {
+      return response.json()
+    })
+    .then(superheroesArray => {
+      this.setState({ superheroes: superheroesArray })
+    })
+    .catch(errors => {
+      console.log("index errors:", errors)
+    })
+  }
+
   createNewSuperhero = (newSuperhero) => {
     console.log(newSuperhero)
   }
@@ -32,8 +50,6 @@ class App extends Component {
     console.log("superhero:", superhero)
     console.log("superhero:", id)
   }
-
-
 
   render() {
     return (
