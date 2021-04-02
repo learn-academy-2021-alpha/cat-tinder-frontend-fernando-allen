@@ -34,7 +34,7 @@ const Header = () => {
             <NavItem>
               <NavLink href="/superheroshow/">Find</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            {/* <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Options
               </DropdownToggle>
@@ -50,7 +50,7 @@ const Header = () => {
                   Reset
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> */}
           </Nav>
           <Nav>
             <NavItem>

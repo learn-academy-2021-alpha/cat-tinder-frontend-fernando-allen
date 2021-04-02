@@ -44,11 +44,51 @@ class App extends Component {
 
   createNewSuperhero = (newSuperhero) => {
     console.log(newSuperhero)
+    let newSuper = { superhero: newSuperhero }
+    console.log(newSuper)
+    return fetch("http://localhost:3000/supers", {
+      body: JSON.stringify(newSuper),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Please check your submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      this.superheroIndex()
+    })
+    .catch(errors => {
+      console.log("create errors:", errors)
+    })
   }
 
   updateSuperhero = (superhero, id) => {
-    console.log("superhero:", superhero)
-    console.log("superhero:", id)
+    // console.log("superhero:", superhero)
+    // console.log("superhero:", id)
+    return fetch(`http://localhost:3000/supers/${id}`, {
+      body: JSON.stringify(superhero),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Please check your submission.")
+      }
+      return response.json()
+    })
+    .then(payload => {
+      this.superheroIndex()
+    })
+    .catch(errors => {
+      console.log("update errors:", errors)
+    })
   }
 
   render() {

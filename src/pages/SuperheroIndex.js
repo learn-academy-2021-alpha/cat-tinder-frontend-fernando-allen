@@ -6,7 +6,7 @@ class SuperheroIndex extends Component {
   render() {
     return (
       <>
-         <h2>Supers Looking for Love!</h2>
+         <h2 className="center">Supers Looking for Love!</h2>
          <CardColumns>
         { this.props.superheroes.map((superhero, index) => {
         return (
